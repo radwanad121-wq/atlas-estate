@@ -361,7 +361,7 @@ const HB=['1613977257365-aaae5a9817ff','1611755489400-3c53602ab783','1549140600-
 HB.forEach((id,i)=>$('#hbg').insertAdjacentHTML('beforeend',`<div class="${i?'':'on'}" style="background-image:url(${U(id,2000)})"></div>`));
 let hi=0;setInterval(()=>{const d=$('#hbg').children;d[hi].classList.remove('on');hi=(hi+1)%d.length;d[hi].classList.add('on')},6500);
 const h1=$('#h1');h1.innerHTML=h1.textContent.split(' ').map((w,i)=>`<span class="w"><span style="transition-delay:${.15+i*.07}s">${w}</span></span>`).join(' ');
-requestAnimationFrame(()=>setTimeout(()=>$('.hero').classList.add('go'),80));
+setTimeout(()=>$('.hero').classList.add('go'),80);
 $('#mq').innerHTML=Array(2).fill(['Villas','Riads','Penthouses','Sea views','Medina','Golf','Gardens','New builds']).flat().map(w=>`<span>${w}</span>`).join('');
 /* cities */
 $('#cityGrid').innerHTML=CITIES.map(([n,id],i)=>`<div class="city rv ${i?'d'+Math.min(i,3):''}" data-city="${n}"><img src="${U(id,i?800:1200)}" alt="${n}" loading="lazy"><div class="c"><div><h3>${n}</h3><span>${L.filter(x=>x.c===n).length||'Soon'} ${L.filter(x=>x.c===n).length?'listings':''}</span></div><span class="ar">→</span></div></div>`).join('');
